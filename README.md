@@ -159,13 +159,15 @@ El servidor estará disponible en `http://localhost:3000`
 1. Crea una cuenta en [Render.com](https://render.com)
 2. Conecta tu repositorio de GitHub
 3. Crea un nuevo Web Service
-4. Configura las variables de entorno en Render
+4. Configura las variables de entorno en Render (ver [RENDER_SECRETS.md](./RENDER_SECRETS.md) para la lista completa)
 5. Deploy automático desde GitHub
 
 **Configuración de Render:**
 - Build Command: `npm install`
 - Start Command: `npm start`
 - Environment: Node
+
+**📋 Para ver la lista completa de todas las API keys y secretos que necesitas configurar en Render, consulta [RENDER_SECRETS.md](./RENDER_SECRETS.md)**
 
 ## Estructura del Proyecto
 
