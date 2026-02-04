@@ -43,7 +43,7 @@ async function chat(messages, systemPrompt = null) {
     
     const completion = await groqClient.chat.completions.create({
       messages: messageArray,
-      model: 'llama-3.1-13b-chat',
+      model: 'meta-llama/llama-4-scout-17b-16e-instruct',
       temperature: 0.7,
       max_tokens: 1024,
     });
