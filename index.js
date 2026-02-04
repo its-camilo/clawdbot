@@ -230,15 +230,16 @@ app.post('/telegram', async (req, res) => {
     }
     
     if (command === '/delete_confirm') {
-      const idMatch = message.match(/\d+/);
+      // Extract ID from message, expecting format like "/delete_confirm 1" or just "1"
+      const idMatch = message.match(/\b(\d+)\b/);
       if (!idMatch) {
         return res.status(400).json({
           success: false,
-          message: 'Task ID not found in message'
+          message: 'Task ID not found in message. Use format: /delete_confirm [id]'
         });
       }
       
-      const result = deleteReminder(idMatch[0], true);
+      const result = deleteReminder(idMatch[1], true);
       
       if (chat_id) {
         const msg = result.success 

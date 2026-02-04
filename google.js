@@ -125,16 +125,19 @@ async function createCalendarEvent(summary, startTime, endTime, description = ''
   }
   
   try {
+    // Use timezone from environment or default to Mexico City
+    const timeZone = process.env.TIMEZONE || 'America/Mexico_City';
+    
     const event = {
       summary,
       description,
       start: {
         dateTime: startTime,
-        timeZone: 'America/Mexico_City',
+        timeZone,
       },
       end: {
         dateTime: endTime,
-        timeZone: 'America/Mexico_City',
+        timeZone,
       },
     };
     

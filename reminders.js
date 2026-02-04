@@ -1,4 +1,5 @@
 // In-memory storage for reminders
+// Note: This is a simple in-memory store, not thread-safe for concurrent access
 let reminders = [];
 let reminderIdCounter = 1;
 

@@ -187,10 +187,21 @@ function setupMessageHandler() {
     try {
       // Check if user wants to add a task
       if (userMessage.toLowerCase().includes('agregar') || 
-          userMessage.toLowerCase().includes('recordar') ||
-          userMessage.toLowerCase().includes('tarea')) {
+          userMessage.toLowerCase().includes('recordar')) {
         
-        const reminder = addReminder(userMessage);
+        // Extract the task from the message (remove the command words)
+        let taskText = userMessage
+          .replace(/agregar/gi, '')
+          .replace(/recordar/gi, '')
+          .replace(/que\s+/gi, '')
+          .replace(/debo\s+/gi, '')
+          .trim();
+        
+        if (!taskText) {
+          taskText = userMessage; // Fall back to full message if extraction fails
+        }
+        
+        const reminder = addReminder(taskText);
         await bot.sendMessage(chatId, `✅ Tarea agregada: ${reminder.task}`);
         return;
       }

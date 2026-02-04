@@ -54,7 +54,7 @@ async function getTodayEventsCalDAV() {
     return {
       success: true,
       events: [],
-      message: 'CalDAV integration is basic - use Google Calendar for full features'
+      message: 'CalDAV integration is a placeholder - use Google Calendar for full functionality'
     };
   } catch (error) {
     console.error('Error fetching CalDAV events:', error.message);
