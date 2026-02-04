@@ -1,0 +1,22 @@
+{
+  "name": "clawdbot",
+  "version": "1.0.0",
+  "description": "Clawdbot - AI-powered task manager with Telegram bot, calendar integrations using Groq",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": ["groq", "telegram", "bot", "calendar", "reminders", "ai"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "groq-sdk": "^0.3.2",
+    "node-telegram-bot-api": "^0.63.0",
+    "googleapis": "^126.0.0",
+    "caldav-client": "^2.0.0",
+    "dotenv": "^16.3.1",
+    "body-parser": "^1.20.2"
+  }
+}
